@@ -40,8 +40,8 @@ func (bc *BoltClient) initializeBucket() {
 }
 
 func (bc *BoltClient) Seed() {
-	initializeBucket()
-	seedAccounts()
+	bc.initializeBucket()
+	bc.seedAccounts()
 }
 
 func (bc *BoltClient) seedAccounts() {
