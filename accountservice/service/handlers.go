@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/adityaladwa/go-microservices/accountservice/dbclient"
+	"github.com/adityaladwa/go-microservices/accountservice/dbservice"
 )
 
-var DBClient dbclient.IBoltClient
+var DBClient dbservice.IBoltClient

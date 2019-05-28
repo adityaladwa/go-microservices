@@ -1,4 +1,4 @@
-package dbclient
+package dbservice
 
 import (
 	"encoding/json"

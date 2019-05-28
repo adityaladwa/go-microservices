@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/adityaladwa/go-microservices/accountservice/dbservice"
 	"github.com/adityaladwa/go-microservices/accountservice/service"
 )
 
@@ -15,7 +16,7 @@ func main() {
 }
 
 func initializeBoltClient() {
-	service.DBClient = &dbclient.BoltClient()
+	service.DBClient = &dbservice.BoltClient()
 	service.DBClient.OpenBoltDb()
 	service.DBClient.Seed()
 }
