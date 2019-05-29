@@ -12,7 +12,7 @@ import (
 
 type IBoltClient interface {
 	OpenBoltDb()
-	QueryAccount(accountId string) (model.Account, error)
+	// QueryAccount(accountId string) (model.Account, error)
 	Seed()
 }
 
@@ -22,11 +22,10 @@ type BoltClient struct {
 
 func (bc *BoltClient) OpenBoltDb() {
 	var err error
-	boltDb, err := bolt.Open("accounts.db", 0600, nil)
+	bc.boltDb, err = bolt.Open("accounts.db", 0600, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer boltDb.Close()
 }
 
 func (bc *BoltClient) initializeBucket() {
@@ -61,4 +60,8 @@ func (bc *BoltClient) seedAccounts() {
 		})
 	}
 	fmt.Printf("Seeded %v fake accounts... \n", total)
+}
+
+func (bc *BoltClient) QueryAccount() {
+
 }
